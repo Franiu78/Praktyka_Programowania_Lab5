@@ -29,3 +29,21 @@ def test_multiply(a, b, expected):
 def test_divide(a, b, expected):
     result = utils.divide(a, b)
     assert result == expected
+
+
+@pytest.mark.parametrize("a, expected", [(1, 1), (2, 10), (3, 11), (4, 100)])
+def test_to_binary(a, expected):
+    result = utils.to_binary(a)
+    assert result == expected
+
+
+@pytest.mark.parametrize("a", [-1, 101, 110])
+def test_to_binary_value_error(a):
+    with pytest.raises(ValueError):
+        utils.to_binary(a)
+
+
+@pytest.mark.parametrize("a", [0.5, 1.5, 39.5])
+def test_to_binary_type_error(a):
+    with pytest.raises(TypeError):
+        utils.to_binary(a)
