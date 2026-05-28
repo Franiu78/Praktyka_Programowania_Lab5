@@ -30,19 +30,20 @@ def test_divide(a, b, expected):
     result = utils.divide(a, b)
     assert result == expected
 
+
 @pytest.mark.parametrize("a, expected", [(1, 1), (2, 10), (3, 11), (4, 100)])
-def test_bin(a, expected):
-    result = utils.bin(a)
+def test_to_binary(a, expected):
+    result = utils.to_binary(a)
     assert result == expected
 
 
 @pytest.mark.parametrize("a", [-1, 101, 110])
-def test_bin_value_error(a):
+def test_to_binary_value_error(a):
     with pytest.raises(ValueError):
-        utils.bin(a)   
+        utils.to_binary(a)
 
 
 @pytest.mark.parametrize("a", [0.5, 1.5, 39.5])
-def test_bin_type_error(a):
+def test_to_binary_type_error(a):
     with pytest.raises(TypeError):
-        utils.bin(a)
+        utils.to_binary(a)

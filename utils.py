@@ -1,6 +1,5 @@
 """Simple calculator helper functions."""
 
-
 # Exemplary calculator functions
 import builtins
 
@@ -25,7 +24,7 @@ def divide(a: int, b: int) -> float:
     return a / b
 
 
-def bin(a: int) -> int:
+def to_binary(a: int) -> int:
     """Return the binary representation of an integer."""
     if not isinstance(a, int):
         raise TypeError("Input must be an integer.")
